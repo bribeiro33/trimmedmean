@@ -10,11 +10,11 @@ import (
 //
 // Usage:
 //
-//	TrimmedMean(data, 0.1)         // symmetric 10% trim from both ends
-//	TrimmedMean(data, 0.05, 0.2)   // 5% from low end, 20% from high end
+//	trimmed_mean(data, 0.1)         // symmetric 10% trim from both ends
+//	trimmed_mean(data, 0.05, 0.2)   // 5% from low end, 20% from high end
 //
 // Returns an error if trimming removes all data or proportions are invalid
-func TrimmedMean(data []float64, trimArgs ...float64) (float64, error) {
+func trimmed_mean(data []float64, trimArgs ...float64) (float64, error) {
 	n := len(data)
 	if n == 0 {
 		return 0, errors.New("input slice is empty")
@@ -56,7 +56,7 @@ func TrimmedMean(data []float64, trimArgs ...float64) (float64, error) {
 }
 
 // converts an int slice to a float64 slice.
-func ToFloat64(ints []int) []float64 {
+func toFloat64(ints []int) []float64 {
 	floats := make([]float64, len(ints))
 	for i, v := range ints {
 		floats[i] = float64(v)
